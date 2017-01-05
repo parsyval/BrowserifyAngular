@@ -1,0 +1,25 @@
+{
+  "name": "Test",
+  "authors": [
+    "vparsy <parsy.v@sfeir.com>"
+  ],
+  "description": "Test with Bower",
+  "main": "index.html",
+  "keywords": [
+    "Test"
+  ],
+  "license": "MIT",
+  "homepage": "bower.test.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.6.1",
+    "bootstrap": "^3.3.7"
+  }
+}

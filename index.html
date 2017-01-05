@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>TodoList</title>
+
+  <!-- Bootstrap -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body ng-app='app' ng-controller="ToDoListCtrl" ng-init="init()">
+  <div class="container-fluid">
+    <div ng-repeat="item in list"
+    class="row todoitem"
+    ng-style="{'text-decoration': item.isStriked ? 'line-through' : 'none'}"
+    ng-click="item.toggleStrike()">
+    <div class="col-md-8">{{item.title}}</div>
+    <div class="col-md-8">{{item.description}}</div>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label for="inputTitle">Title</label>
+      <input type="text" class="form-control" id="inputTitle"
+      placeholder="Title" ng-model="todo.title" required>
+    </div>
+    <div class="form-group">
+      <label for="inputDesc">Description</label>
+      <input type="text" class="form-control" id="inputDesc"
+      placeholder="Description" ng-model="todo.description" required>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click='addToDoItem(todo)'>Add ToDo Item</button>
+  </form>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="bundle.js"></script>
+</body>
+</html>
